@@ -21,6 +21,7 @@ Let’s dive right in!
 Every Chrome extension starts with the **manifest file**. It’s like a blueprint for your extension. Here’s how ours looks:
 ![[manifest-explanation.gif]]
 🔑 **Key Points to Highlight**:
+
 1. **Manifest Version**: We’re using version 3, the latest version for Chrome extensions.
 2. **Permissions**:
     - `host_permissions`: Allows us to communicate with our local LLM service running at `http://127.0.0.1:11434`.
@@ -41,15 +42,18 @@ Every Chrome extension starts with the **manifest file**. It’s like a blueprin
 **[Section 2: Using LLM with extension]**
 ![[Screenshot 2025-01-29 at 12.20.27 PM.png]]
 ---
+**In MacOs start Ollama server, by typing the below command in Terminal**
 ```commandline
-
-### Dear [Recipient],
-
-I hope this message finds you well.
-
-Best regards,
-[Your Name]
+OLLAMA_ORIGINS=chrome-extension://* ollama serve
 ```
+
+**In Windows**
+1. Create environment variable with key `OLLAMA_ORIGINS` and value `chrome-extension://*`
+2. Then Start Ollama server, by typing the below command in CMD or Power shell
+```commandline
+ollama serve
+```
+---
 
 **[Section 3: Outro]**
 And that’s it! 🎉 You’ve just built a Chrome extension powered by LLMs. This setup can be extended further to support more use cases like summarization or translation etc.
